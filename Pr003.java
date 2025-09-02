@@ -27,9 +27,21 @@ class Pr003 {
 		System.out.println("Результат деления var1 на var2");
 		System.out.println(var1/var2);
 		
-		//Приведение результата деления ктипу double
+		//Приведение результата деления ктипу double 
 		vard2 = (double)var1/var2;
 		System.out.println("Результат деления var1 на var2 c явным преобразованием к double");
 		System.out.println(vard2);
-	}
+
+		//Простые типы двнных в java
+		byte byte_var;
+		System.out.print("Значения byte_var:");
+		for (int i=100; i<=150; i++) {
+			byte_var=(byte)i;
+			System.out.print(byte_var + ", ");
+		}
+		short short_var;
+		System.out.printld("Тип данных short имеет разрядность 16 бит и значения от -32 768 да 32 767");
+		System.out.printld("Тип данных int имеет разрядность 32 бита");
+		System.out.printld("Тип данных long имеет разрядность 64 бита");
+	}	
 }
