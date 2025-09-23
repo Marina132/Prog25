@@ -102,7 +102,7 @@ class Pr006 {
 
 	for(num = 1.0; num < 100.0; num++) {
 		sroot = Math.sqrt(num);
-		System.out.println("Квадратный корень из " + num + "равен " + sroot);
+		System.out.println("Квадратный корень из " + num + " равен " + sroot);
 
 		//вычисление ошибки округления
 		rerr = num - (sroot * sroot);
@@ -145,7 +145,7 @@ class Pr006 {
 	System.out.println();
 	for(;;) {
 		System.out.println("Итерация №" + i);
-		System.out.println("Для остановки циула введите \'q\'");
+		System.out.println("Для остановки цикла введите \'q\'");
 		temp = (char) System.in.read();
 		if (temp == 'q')
 			break;
@@ -161,5 +161,27 @@ class Pr006 {
 	for(int ii = 1; ii <=10; sum += ii++);
 	System.out.println("Значение sum: " + sum);
 	//System.out.println("Значение ii: " + ii);
+	
+	//Цикл while()
+	System.out.println();
+	char ch3 = 'a';
+	while (ch3 <= 'z') {
+		System.out.print(ch3 + " ");
+		ch3++;
+	}
+	System.out.println();
+
+	System.out.println();
+	int e, result;
+
+	for(int ii = 0; ii < 10; ii++)  {
+		result = 1;
+		e = ii;
+		while(e > 0) {
+			result *= 2;
+			e--;
+		}
+		System.out.println("2 в степени " + ii + " равно " + result);
+	}
 	}
 }
