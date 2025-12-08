@@ -148,5 +148,10 @@ class Pr018 {
 			System.out.println("Площадь объекта: " + shapes[i].area());
 			System.out.println();
 		}
+
+		//К методам, определённым только в подклассах у ссылочной переменной суперкласса нет доступа:
+		//shapes[0].showStyle();
+		Triangle t1 = new Triangle("контурный", 5.0, 4.5);
+		t1.showStyle();
 	}
 }
