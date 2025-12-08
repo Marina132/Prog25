@@ -2,8 +2,17 @@
 class TwoDShape {
   private double width;
   private double height;
-  private String color = "Черный";
-
+ private String color;
+	
+	TwoDShape(double w, double h, String c) {
+		if (w < 21) 
+			width = w;
+		else 
+			System.out.println("Ширина фигуры не должна превышать 21 см");
+		height = h;
+		color = c;
+	}
+	
   //Методы доступа к закрытым переменным экземпляра
 	double getWidth() {
 		return width;
@@ -42,6 +51,13 @@ class TwoDShape {
 //Подкласс  суперкласса TwoDShape (дочерний класс) для описания треугольников
 class Triangle extends TwoDShape {
   String style;
+
+	//Конструктор, опредлённый в подклассе
+	Triangle(String s, double w, double h, String c) {
+		super(w, h, c);
+		style = s;
+	}
+	
   double area() {
     return getWidth * getHeight / 2;
   }
@@ -51,6 +67,9 @@ class Triangle extends TwoDShape {
 }
 //Подкласс суперкласса TwoDShape для описания прямоугольника
 class Rectangle extenfs TwoDShape {
+	  Rectangle(double w, double h, String c) {
+		super(w, h, c);
+	}
   //метод, проверяющий, является ли прямоугольник квадратом
   boolean isSquare() {
     if(getWidth() == getHeight()) return true;
@@ -70,20 +89,20 @@ class Rectangle extenfs TwoDShape {
 class Pr015 {
   //Демонстрация создания треугольников и двумерных фигур
   public static void main(String[] args) {
-      Triangle t1 = new Triangle();
-      Triangle t2 = new Triangle();
-      t1.setWidth(5.1);
-	  	t1.setHeight(4.3);
-      t1.style = "Пунктирный";
+      Triangle t1 = new Triangle("Пунктирный", 5.1, 4.3, "Зелёный");
+		Triangle t2 = new Triangle("Сплошной", 7.1, 3.3, "Красный");
+/*
 
-      t2.setWidth(7.1);
+        t2.setWidth(7.1);
 	  	t2.setHeight(3.3);
-      t2.style = "Сплошной";
-
-      TwoDShape s1 = new TwoDShape();
+        t2.style = "Сплошной";
+*/
+		TwoDShape s1 = new TwoDShape(10.0, 6.2, "Жёлтый");
+		/*
       s1.setWidth(10.0);
-	  	s1.setHeight(6.2);
-
+	  s1.setHeight(6.2);
+		*/
+	  
       System.out.println("Информация об объекте t1: ");
       t1.showStyle();
       t1.showDim();
@@ -106,10 +125,12 @@ class Pr015 {
       //System.out.println("Площадь: " + s1.area()); Вызов метода подкласса, неприменим к s1
       System.out.println();
 
-      Rectangle r1 = new Rectangle();
-      r1.setWidth(5.1);
+      Rectangle r1 = new Rectangle(35.1,4.3,"Синий");
+		/*
+          r1.setWidth(5.1);
 		  r1.setHeight(4.3);
-
+		*/
+	  
       System.out.println("Информация об объекте r1: ");
       r1.showDim();
       System.out.println("Площадь: " + r1.area());
