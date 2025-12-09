@@ -12,5 +12,24 @@ class Pr020 {
 
 		for(int i=0; i < books.length; i++)
 			books[i].show();
+
+		//Демонстрациядоступа  защищенным переменым из подкласса, находящегося в другом пакете относительно родителя
+                ExtBook[] books1 = new ExtBook[5];
+
+                books1[0] = new ExtBook("Портрет Дориана Грея", "О. Уайлд", 1989, "Эксмо");
+                books1[1] = new ExtBook("Пеступление и наказание", "Ф.М. Достоевский", 1971,"Просвещение");
+                books1[2] = new ExtBook("Мастер и Маргарита", "М.А. Булгаков", 1981, "Питер");
+                books1[3] = new ExtBook("Оно", "С. Кинг", 1986, "Попкорн");
+                books1[4] = new ExtBook("Мартин Иден", "Дж. Лондон", 1927, "Алеф");
+
+                for(int i=0; i < books1.length; i++)
+                        books1[i].show();
+
+                //поиск по автору
+
+                System.out.println("Книга под авторством Булгакова");
+                for(int i=0; i < books1.length; i++)
+                        if(books1[i].getAutor() == "М.А. Булгаков")
+                                System.out.println(books1[i].getTitle());
 	}
 }
